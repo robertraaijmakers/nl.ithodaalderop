@@ -1,0 +1,26 @@
+<script type="text/javascript">
+	Homey.setTitle( __('Test') );
+	Homey.emit('imitate', function() { });
+	Homey.on('remote_found', function() {
+		console.log('Remote found signal');
+	});
+</script>
+
+<style type="text/css">
+	img {
+		height: 60vh;
+		margin: 5vh;
+	}
+	button {
+		margin: 0 10px;
+	}
+</style>
+
+<center>
+	<p>
+		Press a button on your working remote.
+	</p>
+	<p>
+		<!--<button class="button" onclick="Homey.showView('imitate1')" data-i18n="pair.start.has_remote"></button><button class="button" onclick="Homey.showView('generate1')" data-i18n="pair.start.has_no_remote"></button>-->
+	</p>
+</center>

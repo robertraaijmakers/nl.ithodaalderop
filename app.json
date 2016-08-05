@@ -1,0 +1,68 @@
+{
+    "id": "nl.ithodaalderop",
+    "version": "0.0.1",
+    "category": "climate",
+    "compatibility": ">=0.1.0",
+    "name": {
+        "en": "Itho Daalderop",
+        "nl": "Itho Daalderop"
+    },
+    "description": {
+        "en": "This app lets you control your Itho Daalderop CVE ECO RFT using Homey!",
+        "nl": "Laat Homey je Itho Daalderop CVE ECO RFT besturen door middel van deze app!"
+    },
+    "author": {
+        "name": "Robert Raaijmakers"
+    },
+    "images": {
+        "large": "assets/images/large.jpg",
+        "small": "assets/images/small.jpg"
+    },
+    "permissions": [
+	    "homey:wireless:868"
+    ],
+    "speech": [
+    ],
+    "drivers": [
+        {
+            "id": "RFT-SENDER",
+            "name": {
+                "en": "RFT Sender",
+                "nl": "RFT-Zender"
+            },
+            "images": {
+                "large": "drivers/RFT-SENDER/assets/images/large.jpg",
+                "small": "drivers/RFT-SENDER/assets/images/small.jpg"
+            },
+            "class": "fan",
+            "capabilities": [
+                "onoff"
+            ],
+            "pair": [
+                {
+			    	"id": "start"
+			    }
+            ]
+        }
+    ],
+    "flow": {
+    },
+    "signals": {
+	    "868": {
+		    "RFT-SENDER": {
+				"sof": [],
+				"eof": [190],
+				"words": [
+					[190, 570, 190, 570],
+					[570, 190, 570, 190],
+					[190, 570, 570, 190]
+				],
+				"interval": 5890,
+				"repetitions": 20,
+				"sensitivity": 0.7,
+				"minimalLength": 12,
+				"maximalLength": 12
+			}
+	    }
+    }
+}
