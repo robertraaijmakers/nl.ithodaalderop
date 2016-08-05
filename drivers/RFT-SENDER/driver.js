@@ -29,7 +29,7 @@ function createDriver(driver) {
 			if(initFlag) {
 				initFlag = 0;
 				var Signal = Homey.wireless('868').Signal;
-				signal = new Signal('RFT-ZENDER');
+				signal = new Signal('RFT-RECEIVE');
 
 				signal.numberToBitArray = function(number, bit_count) {
 					var result = [];
@@ -62,6 +62,7 @@ function createDriver(driver) {
 
 				//Start receiving
 				signal.on('payload', function (payload, first) {
+					console.log("payload");
 					if(debouncer.check(signal.bitArrayToString(payload))) return;
 			        var rxData = parseRXData(payload); //Convert received array to usable data
 			        console.log(rxData);

@@ -49,19 +49,56 @@
     },
     "signals": {
 	    "868": {
-		    "RFT-SENDER": {
+		    "RFT-SEND1": {
 				"sof": [],
-				"eof": [190],
-				"words": [
-					[190, 570, 190, 570],
-					[570, 190, 570, 190],
-					[190, 570, 570, 190]
-				],
-				"interval": 5890,
-				"repetitions": 20,
-				"sensitivity": 0.7,
-				"minimalLength": 12,
-				"maximalLength": 12
+				"eof": [],
+				"words": [],
+				"interval": 5000, 
+				"repetitions": 20, 
+				"sensitivity": 0.7, 
+				"minimalLength": 12, 
+				"maximalLength": 12, 
+				"modulation": {
+					"type": "2-FSK", 
+					"baudRate": 8008.96, 
+					"channelSpacing": 199951.172, 
+					"channelDeviation": 25390.625 
+				},
+				"carrier": 868299866
+			},
+			"RFT-SEND2": {
+				"sof": [],
+				"eof": [],
+				"words": [],
+				"interval": 5000, 
+				"repetitions": 20, 
+				"sensitivity": 0.7, 
+				"minimalLength": 12, 
+				"maximalLength": 12, 
+				"modulation": {
+					"type": "2-FSK", 
+					"baudRate": 38383.5, 
+					"channelSpacing": 199951.172, 
+					"channelDeviation": 50781.250 
+				},
+				"carrier": 868299866
+			},
+			"RFT-RECEIVE": {
+				"sof": [],
+				"eof": [],
+				"words": [],
+				"interval": 5000, 
+				"repetitions": 20, 
+				"sensitivity": 0.7, 
+				"minimalLength": 12, 
+				"maximalLength": 12, 
+				"modulation": {
+					"type": "2-FSK", 
+					"baudRate": 8008.96, 
+					"channelSpacing": 199951.1172, 
+					"channelDeviation": 50781.250 
+				},
+				"carrier": 868299866
 			}
 	    }
     }
